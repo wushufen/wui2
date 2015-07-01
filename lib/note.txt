@@ -1,0 +1,41 @@
+anicollection
+	css3动画库
+
+fancybox
+	弹框
+
+iconfont
+	字体图樯
+
+ie7
+	ie兼容， 貌似没用。。。
+
+magic
+	css3动画库
+
+pintuer
+	ui库
+
+spectrum
+	颜色
+
+swipe
+	幻灯
+
+bootstrap
+	ui库
+
+jquery
+	js库
+
+json2.js
+	JSON兼容
+
+normalize.css
+	css reset
+
+nprogress
+	进度条、页面加载进度
+
+respond
+	响应式兼容

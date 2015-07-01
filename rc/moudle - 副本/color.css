@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/*文本与文本框*/
+.primary {
+  border-color: #00AAFF;
+  color: #00aaff;
+}
+.success {
+  border-color: #21D100;
+  color: #21d100;
+}
+.warning {
+  border-color: #FFD013;
+  color: #ffd013;
+}
+.danger {
+  border-color: #FF6767;
+  color: #FF5488;
+}
+.error {
+  border-color: #FF0000;
+  color: #ff0000;
+}
+.info {
+  border-color: #5AC0F0;
+  color: #83c3e0;
+}
+.showy {
+  border-color: #FF6767;
+  color: #ff6767;
+}
+.muted {
+  border-color: #8d8d8d;
+  color: #A3A3A3;
+}
+.money {
+  color: #ff8800;
+}
+/*按钮*/
+.button.primary {
+  background: #00AAFF;
+  color: #ffffff;
+}
+.button.success {
+  background: #21D100;
+  color: #ffffff;
+}
+.button.warning {
+  background: #FFD013;
+  color: #ffffff;
+}
+.button.danger {
+  background: #FF6767;
+  color: #ffffff;
+}
+.button.error {
+  background: #FF0000;
+  color: #ffffff;
+}
+.button.info {
+  background: #5AC0F0;
+  color: #ffffff;
+}
+.button.showy {
+  background: #EB3359;
+  color: #ffffff;
+}

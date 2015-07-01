@@ -1,0 +1,327 @@
+@charset "UTF-8";
+/*
+.container{
+	.row{
+		.col.span-*{}
+		.col.span-*{}
+	}	
+}
+*/
+.container {
+  /*非响应时宽度*/
+  width: 960px;
+  /*被嵌套时，比如在一个iframe里。*/
+  /*2015.04.24 bug 不支持 border-box 的，左右 padding 会溢出*/
+  max-width: 100%;
+  /*居中*/
+  margin: auto;
+}
+/*行 clearfix*/
+.row {
+  *zoom: 1;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*列*/
+.col {
+  float: left;
+  /*max-width: 100%*/
+}
+/*列宽*/
+.span-1 {
+  width: 8.3333%;
+}
+.span-2 {
+  width: 16.6667%;
+}
+.span-3 {
+  width: 25%;
+}
+.span-4 {
+  width: 33.3333%;
+}
+.span-5 {
+  width: 41.6667%;
+}
+.span-6 {
+  width: 50%;
+}
+.span-7 {
+  width: 58.3333%;
+}
+.span-8 {
+  width: 66.6667%;
+}
+.span-9 {
+  width: 75%;
+}
+.span-10 {
+  width: 83.3333%;
+}
+.span-11 {
+  width: 91.6667%;
+}
+.span-12 {
+  width: 100%;
+}
+/*留白 >2014.09.04*/
+.container {
+  padding: 0 1em;
+}
+/*
+.col 默认没padding
+通过 .row.col-pd 设置 padding
+2015.04.16 ^
+*/
+.col-pd.row {
+  margin: 0 -1em;
+}
+.col-pd.row,
+.col-pd .col {
+  padding: 0 0.5em;
+}
+/*抵消 .container 的 padding*/
+.not-inset {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+.pd-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.mg-a {
+  margin: 1em;
+}
+.mg-h {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.mg-v {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.mg-t {
+  margin-top: 1em;
+}
+.mg-b {
+  margin-bottom: 1em;
+}
+.pd-a {
+  padding: 1em;
+}
+.pd-h {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.pd-v {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+/************************************************\
+    适应设备
+    要考虑桌面浏览器的滚动条宽度
+\************************************************/
+/*大桌面 [1200, ]*/
+@media all {
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .container {
+    width: 1140px;
+  }
+}
+/*中等桌面 [992, 1200)*/
+@media (max-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+  .md-1 {
+    width: 8.3333%;
+  }
+  .md-2 {
+    width: 16.6667%;
+  }
+  .md-3 {
+    width: 25%;
+  }
+  .md-4 {
+    width: 33.3333%;
+  }
+  .md-5 {
+    width: 41.6667%;
+  }
+  .md-6 {
+    width: 50%;
+  }
+  .md-7 {
+    width: 58.3333%;
+  }
+  .md-8 {
+    width: 66.6667%;
+  }
+  .md-9 {
+    width: 75%;
+  }
+  .md-10 {
+    width: 83.3333%;
+  }
+  .md-11 {
+    width: 91.6667%;
+  }
+  .md-12 {
+    width: 100%;
+  }
+  .md-hidden {
+    display: none !important;
+  }
+  .md-show {
+    display: block !important;
+  }
+  .md-inline {
+    display: inline !important;
+  }
+  .md-inline-block {
+    display: inline-block !important;
+  }
+  .md-pd-0 {
+    padding: 0;
+  }
+  .md-not-inset {
+    margin-left: -1em;
+    margin-right: -1em;
+  }
+}
+/*平板 [768, 992)*/
+@media (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+  /*为了过渡效果好给宽度*/
+  .sm-1 {
+    width: 8.3333%;
+  }
+  .sm-2 {
+    width: 16.6667%;
+  }
+  .sm-3 {
+    width: 25%;
+  }
+  .sm-4 {
+    width: 33.3333%;
+  }
+  .sm-5 {
+    width: 41.6667%;
+  }
+  .sm-6 {
+    width: 50%;
+  }
+  .sm-7 {
+    width: 58.3333%;
+  }
+  .sm-8 {
+    width: 66.6667%;
+  }
+  .sm-9 {
+    width: 75%;
+  }
+  .sm-10 {
+    width: 83.3333%;
+  }
+  .sm-11 {
+    width: 91.6667%;
+  }
+  .sm-12 {
+    width: 100%;
+  }
+  .sm-hidden {
+    display: none !important;
+  }
+  .sm-show {
+    display: block !important;
+  }
+  .sm-inline {
+    display: inline !important;
+  }
+  .sm-inline-block {
+    display: inline-block !important;
+  }
+  .sm-pd-0 {
+    padding: 0;
+  }
+  .sm-not-inset {
+    margin-left: -1em;
+    margin-right: -1em;
+  }
+}
+/*手机 [ , 768)*/
+@media (max-width: 768px) {
+  /*.container{width: 100%}*/
+  .xs-1 {
+    width: 8.3333%;
+  }
+  .xs-2 {
+    width: 16.6667%;
+  }
+  .xs-3 {
+    width: 25%;
+  }
+  .xs-4 {
+    width: 33.3333%;
+  }
+  .xs-5 {
+    width: 41.6667%;
+  }
+  .xs-6 {
+    width: 50%;
+  }
+  .xs-7 {
+    width: 58.3333%;
+  }
+  .xs-8 {
+    width: 66.6667%;
+  }
+  .xs-9 {
+    width: 75%;
+  }
+  .xs-10 {
+    width: 83.3333%;
+  }
+  .xs-11 {
+    width: 91.6667%;
+  }
+  .xs-12 {
+    width: 100%;
+  }
+  .xs-hidden {
+    display: none !important;
+  }
+  .xs-show {
+    display: block !important;
+  }
+  .xs-inline {
+    display: inline !important;
+  }
+  .xs-inline-block {
+    display: inline-block !important;
+  }
+  .xs-pd-0 {
+    padding: 0;
+  }
+  .xs-not-inset {
+    margin-left: -1em;
+    margin-right: -1em;
+  }
+}
+/*过渡效果*/
+.container {
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  transition: .5s;
+}

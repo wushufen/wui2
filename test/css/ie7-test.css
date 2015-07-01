@@ -1,0 +1,11 @@
+.parent{}
+.parent>.child{background: #0f0}
+
+
+*,*:before,*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.child{float: left; width: 50%; padding: 1em}

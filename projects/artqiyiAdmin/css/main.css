@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+html,body{height: 100%}
+html{background: #ddd}
+body{background: #fff}
+
+.main{
+    /* 可以去掉？ 2015.04.26*/
+    /* margin-left: 250px; */
+    padding: 0em 0em;
+    max-height: 100%;
+    overflow: auto;
+}
+
+/* 弹性 */
+.main{display: flex; flex-direction: column; height: 100%}
+.navbar{flex: none}
+.main .container{flex: 1; overflow: auto}
+
+
+.app-name{text-align: center; font-weight: normal;font-size: 20px;}
+
+
+.navbar{border-top:0; margin-top:0}

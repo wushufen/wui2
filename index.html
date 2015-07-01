@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>wui2</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" type="text/css" href="moudle/reset.css">
+	<link rel="stylesheet" type="text/css" href="moudle/class.css">
+	<link rel="stylesheet" type="text/css" href="moudle/container.css">
+	<link rel="stylesheet" type="text/css" href="moudle/-webkit-scrollbar.css">
+
+	<style type="text/css">
+		html,body{height: 100%; margin: 0}
+		.wp{height: 100%}
+		.sidebar{
+			position: absolute;
+			height: 100%;
+			width: 15%;
+		}
+
+		#css,
+		#editor,
+		#show{
+			box-sizing: border-box;
+			float: left;
+			position: absolute;
+			height: 100%;
+			border: none;
+			outline: none;
+			transition: .2s;
+		}
+		#css,
+		#editor{
+			width: 35%;
+			height: 80%;
+			right: 50%;
+			border: solid 1px #bbb;
+			/*margin-right: -15%;*/
+		}
+		#css:focus,
+		#editor:focus{z-index: 1; margin-right: 0; box-shadow: 0px 15px 20px #000}
+		#css{
+			height: 50%;
+			padding: .5em;
+			font-size: 14px;
+			font-family: "Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+			background: #2D2D2D;
+			color: #22FFE6;
+		}
+		#editor{
+			width: 35%;
+			bottom: 0;
+			padding: .5em;
+			font-size: 14px;
+			line-height: 1.5;
+			font-family: "Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+			background: #272822;
+			color: #5CCF89;
+		}
+		#show{
+			right: 0;
+			width: 50%;
+			background: #f5f5f5
+		}
+		</style>
+		<style type="text/css">
+		.sidebar{
+			overflow: auto;
+			background: #3D4F5D;
+		}
+		.sidebar ul{list-style: none; padding: 0; margin: 0}
+		.sidebar li{
+			padding: .5em 1em;
+			color: #eee;
+			text-decoration: none;
+		}
+		.sidebar a{
+			margin: -.5em -1em;
+			padding: .5em 1em;
+			display: block;
+			text-decoration: none;
+			color: #fff;
+		}
+		.sidebar a:hover{background: rgba(255, 255, 255, 0.17)}
+	</style>
+
+</head>
+<body>
+
+<div class="wp">
+	<div class="sidebar">
+		<ul>
+			<li>wui</li>
+			<li><a target="show" href="container.html">container</a></li>
+			<li><a target="show" href="nav_touch.html">nav_touch</a></li>
+			<li><a target="show" href="path.html">path</a></li>
+			<li><a target="show" href="a.html">链接</a></li>
+		</ul>
+	</div>
+	<textarea id="css"></textarea>
+	<textarea id="editor"></textarea>
+	<iframe id="show" name="show" src=""></iframe>
+</div>
+
+<!-- <iframe style="display:block; width: 100%; height: 100%;" src="." frameborder="no"></iframe>  -->
+
+<script type="text/javascript" src="jquery.js"></script>
+
+<!-- 编辑器 -->
+<script type="text/javascript" src="snippet.js"></script>
+<script type="text/javascript">
+	// !function(){
+		var elEditor = document.getElementById('editor')
+		var showIframe = document.getElementById('show')
+
+		var indentChars = '    ';
+
+
+		// 特殊键 键码: 键名
+		var keyCodeMap = {
+			'9': 'tab',
+			'13': 'enter',
+			'37': 'left',
+			'38': 'up',
+			'39': 'right',
+			'40': 'down',
+			'219': '[',
+			'222': "'",
+		}
+
+		// 按键配置
+		var keymap = {
+			// 组合键
+			'ctrl+shift+alt+key': function(){/*do something*/},
+			'tab': function(){
+
+				// 如果光标前是一个单词
+				var word = getCursorBeforeWord();
+				console.log('word', word);
+				if (word) {
+					trigger(word);
+				}else{
+					insertIndent(1);
+				}
+			},
+			'enter': function(){
+
+				var curLine = getSelectionStartline();
+				var indent = getLineIndent(curLine);
+
+				var cursorBeforeChar = getCursorBeforeChar();
+				var cursorAfterChar = getCursorAfterChar();
+
+				// <tag>|</tag>
+				if (cursorBeforeChar=='>'&&cursorAfterChar=='<') {
+					insertText('\n');
+					insertIndent(indent+1);
+					var cursorMark = getSelectionStart();
+					insertText('\n');
+					insertIndent(indent);
+					cursorMoveTo(cursorMark);
+					return;
+				};
+
+				// code {|}
+				if (cursorBeforeChar=='{') {
+					insertText('\n');
+					insertIndent(indent+1);
+					var cursorMark = getSelectionStart();
+					insertText('\n');
+					insertIndent(indent);
+					cursorMoveTo(cursorMark);
+					return;
+				};
+
+				// 一般情况跟上一行的缩进相同
+				insertText('\n');
+				insertIndent(indent);
+
+			},
+			'ctrl+enter': function () {
+				
+			},
+			'[': function(){
+				insertText('[]');
+				cursorMove(-1);
+			},
+			'shift+[': function(){
+				insertText('{}');
+				cursorMove(-1);
+			},
+			"'": function(){
+				insertText("''");
+				cursorMove(-1);
+			},
+			"shift+'": function(){
+				insertText('""');
+				cursorMove(-1);
+			},
+			'shift+9': function(){
+				insertText('()');
+				cursorMove(-1);
+			},
+			'ctrl+s': function(){
+				alert('ctrl+s')
+			}
+		};
+
+		elEditor.addEventListener('keydown', function(e){
+			console.log(e)
+			// e.preventDefault();
+
+			// 按键组合
+			var ctrl = e.ctrlKey? 'ctrl+': '';
+			var shift = e.shiftKey? 'shift+': '';
+			var alt = e.altKey? 'alt+': '';
+			var keyCode = e.which;
+			var key = keyCodeMap[keyCode]||String.fromCharCode(e.which).toLowerCase();
+			var keys = ctrl+shift+alt+key;
+			console.log(keyCode, keys);
+
+			// 执行
+			var fun = keymap[keys];
+			if (fun) {
+				e.preventDefault();//阻止默认，比如tab键不失去焦点
+				fun();
+			};
+
+
+		})
+
+		elEditor.addEventListener('keyup', function(e){
+			refleshPreview();
+		})
+		css.addEventListener('keyup', function(e){
+			refleshPreview();
+		})
+
+		elEditor.addEventListener('keypress', function(e){
+			// console.log(e)
+		})
+
+		// 刷新预览
+		function refleshPreview(){
+			// elShow.innerHTML = elEditor.value;
+			// showIframe.src='data:text/html,' + elEditor.value;
+			var doc = showIframe.contentDocument || showIframe.document;  
+			var html = elEditor.value + '<style>' + css.value + '</style>';
+			doc.body.innerHTML = html;
+		}
+
+
+		// 光标位置
+		function getSelectionStart () {
+			return elEditor.selectionStart;
+		}
+		function getSelectionEnd () {
+			return elEditor.selectionEnd;
+		}
+		function setSelection (s,e) {
+			elEditor.selectionStart=s;
+			elEditor.selectionEnd=e;
+		}
+
+		// 光标移动
+		function cursorMoveTo (index) {
+			setSelection(index,index);
+		}
+		function cursorMove (n) {
+			var cursorMark = getSelectionStart();
+			cursorMoveTo(cursorMark+n);
+		}
+
+		// 获得所有文本
+		function getText(){
+			return elEditor.value;
+		}
+
+		// 获得光标前的文本
+		function getCursorBeforeText(){
+			var text = getText();
+			var selectionStart = getSelectionStart();
+			var cursorBeforeText = text.substring(0, selectionStart);
+			return cursorBeforeText;
+		}
+
+		// 获得光标后的文本
+		function getCursorAfterText(){
+			var text = getText();
+			var selectionEnd = elEditor.selectionEnd;
+			var cursorAfterText = text.substring(selectionEnd);
+			return cursorAfterText;
+		}
+
+		// 获得光标前的一个单词
+		function getCursorBeforeWord(){
+			var cursorBeforeText = getCursorBeforeText();
+			var cursorBeforeWordMatch = cursorBeforeText.match(/\w+$/);
+			var cursorBeforeWord = cursorBeforeWordMatch===null? '':cursorBeforeWordMatch[0];
+			return cursorBeforeWord;
+		}
+
+		// 获得光标前的一个字母
+		function getCursorBeforeChar(){
+			var cursorBeforeText = getCursorBeforeText();
+			return cursorBeforeText[cursorBeforeText.length-1]||'^';
+		}
+
+		// 获得光标后的一个字母
+		function getCursorAfterChar(){
+			var cursorAfterText = getCursorAfterText();
+			return cursorAfterText[0]||'';
+		}
+
+		// 从光标处插入文本
+		function insertText(str){
+			str = str.replace(/\r/g,'');//解决字符包换/r长与真正插入的长度不一致而造成光标移动错误
+			var cursorBeforeText = getCursorBeforeText();
+			var cursorAfterText = getCursorAfterText();
+			elEditor.value = cursorBeforeText + str + cursorAfterText;
+			cursorMoveTo(cursorBeforeText.length + str.length);
+		}
+
+		// 获得行数
+		function getLineCount () {
+			var text = getText();
+			var reg = /\n/g;
+			var lineArr = text.match(reg); 
+			var lineCount = lineArr==null? 1: lineArr.length+1
+			return lineCount;
+		}
+
+		// 获得选中文本开始处所在行，行数从1开始
+		function getSelectionStartline () {
+			var selectionStart = getSelectionStart();
+			var text = getText();
+			var reg = /\n/g;
+			var m;
+			var lineFlat = 1;
+			// 逐行判断
+			while((m = reg.exec(text) )!==null){
+				if (m.index >= selectionStart) {
+					break;
+				};
+				lineFlat ++;
+			}
+			return lineFlat;
+		}
+
+		// 获得行数组
+		function getLineArr () {
+			var text = getText()
+			var lineArr = text.split('\n');
+			return lineArr;
+		}
+
+		// 获得某行，行数从1开始
+		function getLineText (lineIndex) {
+			var lineArr = getLineArr();
+			return lineArr[lineIndex-1];
+		}
+
+		// 获得某行的缩进
+		function getLineIndent (lineIndex) {
+			var lineText = getLineText(lineIndex);
+			var reg = new RegExp('^('+ indentChars +')*');
+			var m = reg.exec(lineText);
+			var indentStr = m[0];
+			var indent = indentStr.length/indentChars.length;
+			return indent;
+		}
+
+		// 缩进
+		function insertIndent (indent) {
+			for (var i=0; i<indent; i++) {
+				insertText(indentChars)
+			}
+		}
+
+
+
+		// 触发器
+		function trigger (str) {
+			// 替换
+			var preSelectoinStart = getSelectionStart();
+			setSelection(preSelectoinStart - str.length, preSelectoinStart);
+
+			var snipper = snipperMap[str];
+			if (snipper) {
+				var cursorIndex = snipper.indexOf('|');
+				snipper = snipper.replace('|','');
+				insertText(snipper);
+				if (cursorIndex!==-1) {
+					cursorMove( - (snipper.length - cursorIndex) );
+				}
+			}else{
+				insertText('<'+ str +'></'+ str +'>');
+				cursorMove( - (str.length + 3) );
+			};
+		}
+
+
+		// 初始内容
+		// trigger('html');
+
+	// }()
+</script>
+
+<!-- 插入组件 -->
+<script type="text/javascript">
+var $sidebarA = $('.sidebar a');
+$sidebarA.click(function(e){
+	e.preventDefault();
+
+	var href = $(this).attr('href');
+	$.get(href, function(rsp, status){
+
+		// 提取css
+		var css = '';
+		var cssReg = new RegExp('<style type="text/css">([\\s\\S]+?)</style>', 'g');
+		var rs;
+		while( (rs = cssReg.exec(rsp))!==null ){
+			css += rs[1]? rs[1]: '';
+		}
+		$('#css').val($('#css').val()+css);
+
+
+		// 提取html
+		var html = '';
+		var htmlReg = new RegExp('<!-- snippet/ -->([\\s\\S]+?)<!-- /snippet -->');
+		var rs = rsp.match(htmlReg);
+		html = rs? rs[1]:''; 
+
+		insertText(html);
+		refleshPreview();
+		elEditor.focus();
+
+		// 本地存储
+		localStorage.css = $('#css').val();
+		localStorage.html = $('#editor').val();
+	});
+});
+
+// 读取本地存储
+$('#css').val(localStorage.css);
+$('#editor').val(localStorage.html);
+
+
+</script>
+</body>
+</html>

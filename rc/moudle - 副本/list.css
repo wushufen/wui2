@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*
+.list{
+	.list-item{}
+	a.list-item{}
+}
+*/
+.list {
+  list-style: none;
+  margin-bottom: 1em;
+  /*抵消第一个的margin-top:-1px*/
+  margin-top: 1px;
+}
+.list-item {
+  display: block;
+  border: solid 1px #ddd;
+  padding: .5em 1em;
+  margin-top: -1px;
+}
+/*圆角效果*/
+.list-item:first-child {
+  border-radius: 4px 4px 0 0;
+}
+.list-item:last-child {
+  border-radius: 0 0 4px 4px;
+}

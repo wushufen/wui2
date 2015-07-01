@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*选择的文本*/
+::selection {
+  background: #576268;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #576268;
+  color: #ffffff;
+}

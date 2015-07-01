@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.badge{
+	display: inline-block; *display:inline;*zoom:1;
+	padding: 0 0.25em;
+	line-height: 1.25;
+	font-size: .9em;
+	vertical-align: middle;
+
+	border-radius: 9em;
+	background: #13B1FF;
+	color: #fff;
+	font-style: normal;
+}
+
+/*位置*/
+.badge-right .badge{position: absolute; top: 10px; right: 4px;}
+.badge-top-right .badge{position: absolute; top: 0; right: 0}

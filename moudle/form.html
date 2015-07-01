@@ -1,0 +1,344 @@
+<style type="text/css">
+@import url(reset.css);
+@import url(container.css);
+
+@import url(class.css);
+
+@import url(form.css);
+@import url(color.css);
+</style>
+
+<style type="text/css">
+	h2{border-bottom: solid 1px #ddd; margin: 2em 0 1em;}
+	.example{
+		position: relative;
+		border: solid 1px #eee;
+		border-radius: 3px;
+		padding: 2em 1em 1em;
+		margin: 1em 0;
+	}
+	.example:before{
+		content: "example";
+		position: absolute;
+		left: -1px;
+		top: -.75em;
+		padding: 0 .5em;
+		border: solid #f1f1f1;
+		border-width: 1px;
+		border-radius: 8px 0;
+		background: #F8F8F8;
+		color: #bbb;
+	}
+</style>
+
+
+
+<div class="container">
+		
+	<h2 id="form">form</h2>
+	<div class="example">
+		<button class="button">按钮</button>
+		<a class="button" href="">链接按钮</a>
+		
+		<button class="button small">小按钮</button>
+		<button class="button">默认按钮</button>
+		<button class="button large">大按钮</button>
+	</div>
+	<div class="example">
+		<button class="button primary">主要</button>
+		<button class="button success">成功</button>
+		<button class="button warning">警告</button>
+		<button class="button danger">危险</button>
+		<button class="button error">错误</button>
+		<button class="button info">信息</button>
+	</div>
+
+	<div class="example">
+		<input class="input" style="max-width:25em" type="text" placeholder="文本框" />
+		<input class="input small" style="max-width:25em" type="text" placeholder="小文本框" />
+	</div>
+
+	<div class="example">
+		<textarea class="input"></textarea>
+	</div>
+
+	<div class="example">
+		<input class="input-line" style="max-width:25em" type="text" name="" />
+	</div>
+
+	<h3>group</h3>
+	<div class="example">
+		<div class="group" style="max-width:25em">
+			<input class="group-item input" type="text" name="" placeholder="用户名" />
+			<input class="group-item input" type="password" name="" placeholder="密码" />
+			<button class="group-item button primary">登录</button>
+		</div>
+	</div>
+
+	<div class="example">
+		<div class="group" style="max-width:25em">
+			<label class="group-item">
+				<input type="checkbox" name="" />
+				选择
+			</label>
+			<label class="group-item">
+				<input type="checkbox" name="" />
+				选择
+			</label>
+			<label class="group-item">
+				<input type="checkbox" name="" />
+				选择
+			</label>
+		</div>
+	</div>
+
+	<div class="example">
+		<div class="group inline-block" style="max-width:25em">
+			<button class="group-item button">按钮</button>
+			<button class="group-item button">按钮</button>
+			<button class="group-item button">按钮</button>
+		</div>
+	</div>
+
+
+	<h3>group horizontal</h3>
+	<div class="example">
+		<div class="group horizontal">
+			<button class="group-item button">按钮</button>
+			<button class="group-item button">按钮</button>
+			<button class="group-item button">按钮</button>
+		</div>
+	</div>
+
+	<div class="example">
+		<div class="group horizontal">
+			<label class="group-item button">
+				<input type="radio" name="r" />
+				男
+			</label>
+			<label class="group-item button">
+				<input type="radio" name="r" />
+				女
+			</label>
+		</div>
+
+		<div class="group horizontal">
+			<button class="group-item button">-</button>
+			<input class="group-item input text-center" style="width:4em" type="text" name="" value="1" />
+			<button class="group-item button">+</button>
+		</div>
+
+		<div class="group horizontal">
+			<span class="group-item">￥</span>
+			<input class="group-item input text-center" style="width:4em" type="text" name="" value="99" />
+			<span class="group-item">.00</span>
+		</div>
+
+		<div class="group horizontal">
+			<label class="group-item">
+				<input type="checkbox" name="r" />
+			</label>
+			<input class="group-item input text-center" style="width:4em" type="text" name="" value="10" />
+		</div>
+
+		<div class="group horizontal">
+			<input class="group-item input" style="width:10em" type="text" name="" placeholder="搜索" />
+			<button class="group-item button">Q</button>
+		</div>
+	</div>
+
+
+	<h3>group justified</h3>
+	button 标签无效
+	<div class="example">
+		<div class="group justified" style="max-width:25em">
+			<div class="group-item">...</div>
+			<div class="group-item">...</div>
+			<div class="group-item">...</div>
+		</div>
+	</div>
+
+	<div class="example">
+
+		<form style="max-width:25em">
+
+			<div class="form-group">
+				<div class="group justified">
+					<span class="group-item button">button</span>
+					<span class="group-item button">button</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="group justified">
+					<input class="group-item input"  type="text" name="" />
+					<input class="group-item input"  type="text" name="" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="group justified">
+					<span class="group-item button">button</span>
+					<input class="group-item input"  type="text" name="" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="group justified">
+					<input class="group-item input"  type="text" name="" />
+					<span class="group-item button">button</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="group justified">
+					<span class="group-item">用户名</span>
+					<input class="group-item input"  type="text" name="" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="group justified">
+					<span class="group-item">密码</span>
+					<input class="group-item input"  type="password" name="" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<a class="float-right">忘记密码？</a>
+				<label>
+					<input type="checkbox" name="" />
+					记住我
+				</label>
+			</div>
+
+			<button class="button primary block">登录</button>
+
+		</form>
+
+
+	</div>
+
+
+	<h3>form group</h3>
+	<div class="example">
+
+		<form class="" style="max-width:25em">
+
+			<div class="form-group">
+				<label class="label">用户名</label>
+				<input class="input" type="text" name="" />
+			</div>
+
+			<div class="form-group">
+				<label class="label">密码</label>
+				<input class="input" type="password" name="" />
+			</div>
+
+			<div class="form-group">
+				<div class="controls">
+					<a class="float-right" href="">忘记密码?</a>
+					<label>
+						<input type="checkbox" name="" />
+						记住我
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<button class="button primary">登录</button>
+			</div>
+		</form>
+	</div>
+
+
+	<h3>horizontal</h3>
+	<div class="example">
+
+		<form class="horizontal">
+
+			<div class="form-group">
+				<label class="label">用户名</label>
+				<input class="input" type="text" name="" />
+				<p class="tip error">请输入用户名</p>
+			</div>
+
+			<div class="form-group">
+				<label class="label">密码</label>
+				<input class="input" type="password" name="" />
+				<p class="tip success">请输入用户名密码密码密码密码密码</p>
+			</div>
+
+			<div class="form-group">
+				<label class="label">重复密码密码密码密码密码</label>
+				<input class="input" type="password" name="" />
+			</div>
+
+			<div class="form-group">
+				<div class="controls group horizontal">
+					<label class="group-item"><input type="radio" name="sex" />男</label>
+					<label class="group-item"><input type="radio" name="sex" />女</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="controls">
+					<a class="float-right" href="">忘记密码?</a>
+					<label>
+						<input type="checkbox" name="" />
+						记住我
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<button class="button primary">登录</button>
+			</div>
+		</form>
+	</div>
+
+
+	<h3>inline</h3>
+	<div class="example">
+
+		<form class="inline">
+
+			<div class="form-group">
+				<label class="label">用户名</label>
+				<input class="input" type="text" name="" />
+			</div>
+
+			<div class="form-group">
+				<label class="label">密码密码密码密码密码</label>
+				<input class="input" type="password" name="" />
+			</div>
+
+			<div class="form-group">
+				<label class="label">重复密码</label>
+				<input class="input" type="password" name="" />
+			</div>
+
+			<div class="form-group">
+				<div class="controls group horizontal">
+					<label class="group-item"><input type="radio" name="sex" />男</label>
+					<label class="group-item"><input type="radio" name="sex" />女</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="controls">
+					<a class="float-right" href="">忘记密码?</a>
+					<label>
+						<input type="checkbox" name="" />
+						记住我
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<button class="button primary">登录</button>
+			</div>
+		</form>
+	</div>
+
+</div>

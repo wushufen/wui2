@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*
+.pagination{
+	span.disable{}
+	.active{} | span.active{ form{input} }
+	a{}
+}
+*/
+.pagination {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.pagination a,
+.pagination span {
+  float: left;
+  padding: 3px 10px;
+  border: solid 1px #ddd;
+  margin-left: -1px;
+  margin-top: 2px;
+}
+.pagination a {
+  color: #456;
+  text-decoration: none;
+}
+.pagination .active {
+  position: relative;
+  z-index: 1;
+  border-color: #84D4FF;
+  background: #84D4FF;
+  color: #fff;
+}
+/* 跳转 */
+.pagination input {
+  margin: -3px -10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  width: 2em;
+  text-align: center;
+}
+/*效果*/
+.pagination > :first-child {
+  border-radius: 4px 0 0 4px;
+}
+.pagination > :last-child {
+  border-radius: 0 4px 4px 0;
+}

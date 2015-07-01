@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/*
+.dropdown[.open]{
+    [button]
+    .dropdown-menu{
+        ...
+    }
+}
+*/
+
+.dropdown{position: relative; display: inline-block;*display: inline;*zoom:1;}
+.dropdown.open .dropdown-menu{display: block}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 3px 0;
+    padding: 4px 0;
+    background: #fff;
+    border: solid 1px #D7D7D7;
+    border-radius: 3px;
+    box-shadow: 0px 5px 15px 0px #E5E5E5;
+    min-width: 160px;
+    margin-right: -99em; /*防止被挤窄*/
+    z-index: 999;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 3px 1em 3px 1.8em;
+    text-decoration: none;
+    color: #6B6B6B;
+    white-space: nowrap;
+}
+.dropdown-menu li a:hover{
+    background: #F4F4F4;
+}
+/* 图标 */
+.dropdown-menu i{
+    float: left;
+    margin-left: -1.2em;
+}
+/*右侧*/
+.dropdown-menu .float-right{margin-left: 1em;color: #9E9E9E;}
+/*分隔线*/
+.dropdown-menu li.devider{
+    border-bottom: solid 1px #eee;
+    margin: 3px 0;
+}
+
+/*右对齐*/
+.dropdown-menu-right{
+    left: auto;
+    right: 0;
+    margin-right: 0;
+    margin-left: -99em;
+}
+
+
+
+
+/*下拉箭头*/
+.caret {
+    display: inline-block; *display:inline;*zoom:1;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border: solid 3px transparent;
+    border-bottom: 0;
+    border-top: solid 3px;
+    margin-left: 2px;
+    margin-top: -.5ex;
+}
+
+/*下折角形状，背景颜色须为白色*/
+/*
+.caret{
+    display: inline-block; *display:inline;*zoom:1;
+    vertical-align: middle;
+    margin-left: 2px;
+    margin-top: -.5ex;
+    position: relative;
+}
+.caret,
+.caret:before{
+    width: 0;
+    height: 0;
+    border: solid 4px transparent;
+    border-bottom: 0;
+    border-top: solid 4px;
+}
+.caret:before{
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -5px;
+    border-top-color: #fff
+}
+*/

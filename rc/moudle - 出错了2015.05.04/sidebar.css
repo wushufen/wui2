@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*侧边栏*/
+/*
+body{
+	.sidebar{
+		.sidebar-header{}
+		ul.sidebar-menu{li{a}...}
+	}
+	.main{}
+}
+*/
+.sidebar {
+  float: left;
+  background: #333E42;
+  width: 250px;
+  height: 100%;
+  overflow: auto;
+}
+.sidebar-header {
+  padding: 16px 1em;
+  color: #fff;
+  border-bottom: solid 1px #bbb;
+}
+ul.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-menu li {
+  border-bottom: solid 1px #666;
+  padding: .5em 1em;
+  color: #ddd;
+}
+.sidebar-menu li a {
+  display: block;
+  margin: -0.5em -1em;
+  padding: .5em 1em;
+  color: #fff;
+}
+.sidebar-menu li a:hover {
+  background: #666666;
+}
+.sidebar-menu li a.active {
+  background: #fff;
+  color: #333;
+  border-left: solid 2px #00aaff;
+}
+/* 弹性 */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.sidebar-header {
+  flex: none;
+}
+.sidebar-menu {
+  flex: 1 1 auto;
+  overflow: auto;
+}

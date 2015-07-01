@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+html.width-sticky-footer{
+	position: relative; /*footer 放在它的最下面*/
+	min-height: 100%; /*当页面较短时，高度 100%*/
+}
+.width-sticky-footer body{
+	padding-bottom: 60px; /*留给 footer 的位置*/
+	margin-bottom: 1em; /*留白*/
+}
+.width-sticky-footer .footer{position: absolute; bottom:0; left: 0; right:0;}
+
+
+/*
+ie7 html标签不支持position
+*/
+html.width-sticky-footer{*height: 100%}
+.width-sticky-footer body{*position: relative; *min-height: 80%; _height:80%;}

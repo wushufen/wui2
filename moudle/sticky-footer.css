@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/*
+html,body{height: 100%}
+body{display: flex;flex-direction: column;}
+body>*{flex:none}
+
+.footer{margin-top: auto; flex: 0 0 auto;}
+*/

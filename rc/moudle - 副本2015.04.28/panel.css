@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/*
+.panel{
+	.panel-header{}
+	.panel-body{}
+	.panel-footer{}
+}
+*/
+.panel{
+	/*padding: .5em 1em;*/
+	border: solid 1px #ddd;
+
+
+	border-radius: 3px;}
+.panel-header{
+	/*margin: -.5em -1em .5em;*/
+	padding: .375em 1em;
+	border-bottom: solid 1px #ddd;
+
+	background: #f7f7f7;
+	border-radius: 4px 4px 0 0
+}
+.panel-body{
+	/*margin: -.5em -1em;*/
+	padding: .75em 1em;
+}
+.panel-footer{
+	/*margin: .5em -1em -.5em;*/
+	border-top: solid 1px #ddd;
+	padding: .375em 1em;
+
+	background: #F9F9F9;
+	border-radius: 0 0 4px 4px
+}

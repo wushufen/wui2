@@ -1,0 +1,16 @@
+/*lg [1200, ]*/
+@media all{
+
+}
+/*mb [992, 1200)*/
+@media (max-width: 1200px){
+
+}
+/*sm [768, 992)*/
+@media (max-width: 992px){
+
+}
+/*xs [ , 768)*/
+@media (max-width: 768px){
+
+}

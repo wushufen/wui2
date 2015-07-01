@@ -1,0 +1,2 @@
+让360chrome允许访问本地文件 命令行
+360chrome --allow-file-access-from-files

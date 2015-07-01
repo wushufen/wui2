@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/*
+.tabs{
+	[.tabs-hader{}]
+	.tab{}
+	.tab{}
+}
+.tabs-body{
+	.tab-content{}
+	.tab-content{}
+}
+*/
+.tabs {
+  border-bottom: solid 1px #ddd;
+  /*下横线*/
+}
+.tabs {
+  *zoom: 1;
+}
+.tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*标签控件标题*/
+/*标签*/
+.tabs-header,
+.tab {
+  float: left;
+  /*横向排列*/
+  padding: .375em .75em;
+}
+.tabs-header {
+  color: #000000;
+}
+.tab {
+  cursor: pointer;
+}
+/*当前标签*/
+.tab.active {
+  border: solid 1px #ddd;
+  border-radius: 4px 4px 0 0;
+  margin: -1px;
+  /*抵消 border 的空间、盖住下横线*/
+  border-bottom-color: #fff;
+  /*盖住下横线*/
+  background: #fff;
+}
+/*标签内容*/
+/*.tab-content{
+	display: none;
+}*/

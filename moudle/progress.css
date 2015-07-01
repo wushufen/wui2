@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*
+.progress{
+	x [style="width:n%"]{n%}
+}
+*/
+.progress{
+	background: #eee;
+	white-space: nowrap;
+	overflow: hidden;
+	border-radius: 8px;
+}
+.progress *{
+	background: #59C6FF;
+	color: #FFF;
+	text-align: right;
+	line-height: 1em;
+	max-width: 100%;
+	transition: 0.1s;
+}

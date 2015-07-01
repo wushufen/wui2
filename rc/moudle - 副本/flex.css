@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/*2015.04.27*/
+/*未完成*/
+.flex {
+  display: flex;
+}
+.flex-v {
+  flex-direction: column;
+}
+.flex-none {
+  flex: none;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-auto-0-0 {
+  flex: auto 0 0;
+}
+.flex-auto-0-1 {
+  flex: auto 0 1;
+}
+.flex-auto-1-0 {
+  flex: auto 1 0;
+}
+.flex-auto-1-1 {
+  flex: auto 1 1;
+}

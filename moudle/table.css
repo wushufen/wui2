@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/*
+table.table{}
+table.table.table-rainbow{}
+*/
+.table{
+	/*避免ie7撑宽*/
+	/**table-layout: fixed;*/
+	border-collapse:collapse;
+	border-spacing:0;
+	width:100%;
+}
+.table th,
+.table td{
+	padding:.25em 2px .25em .75em;
+	/* 用width无法控制宽度 */
+	max-width:10em;
+
+	/*2014.5.27 - 隐藏的内容看不到，如按钮*/
+	/*{
+	overflow:hidden;
+	text-overflow:ellipsis
+	}*/
+}
+.table th{
+	text-align:left;
+	color: #111;
+	white-space: nowrap; /*2014.05.30 + 标题一般较短，不换行占位*/
+}
+
+.table td{
+	border-top: solid 1px #eee;
+}
+
+/*第一行标题*/
+.table tr:first-child th{background: #FCFCFC; border-bottom: solid 1px #ddd;}
+
+
+
+/*效果*/
+.table tr:not(:first-child):hover{/* outline: solid 1px #ddd; */outline-offset: -1px;}
+.table tr:hover td{/* background: #f7f7f7; */border-bottom: solid 1px #96CFE8;}
+
+/*彩虹条纹*/
+.table-rainbow tr:nth-child(7n+1){background: #fff}
+.table-rainbow tr:nth-child(7n+2){background: #fee}
+.table-rainbow tr:nth-child(7n+3){background: #ffe}
+.table-rainbow tr:nth-child(7n+4){background: #efe}
+.table-rainbow tr:nth-child(7n+5){background: #eff}
+.table-rainbow tr:nth-child(7n+6){background: #eef}
+.table-rainbow tr:nth-child(7n+7){background: #fef}
+

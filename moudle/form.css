@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+/************************************************\
+	表单
+\************************************************/
+
+/*文本框、文本域、下拉选择*/
+.input{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.input{
+	/*2014.07.30 ^ block>inline-block，width-auto 不用再加 inline-block*/
+	display: inline-block; *display: inline; *zoom: 1;
+	width: 100%;
+	height: 30px;
+	padding: 0px 0.5em;
+	vertical-align: middle;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	background: transparent;
+	color: #888;
+	box-shadow: #eee 0 1px 9px -2px inset;
+}
+textarea.input{
+	/*使 textarea 不能拉宽*/
+	max-width: 100%; min-width: 100%;
+	
+ height: auto;
+}
+/*横线文本框*/
+/*2014.09.04 = 考虑去掉*/
+.input-line{
+	display: inline-block; *display: inline; *zoom: 1;
+	border: solid 1px #5da8ca;
+	border-width: 0 0 1px 0;
+	width: 100%;
+	background: transparent;
+	color: #888;
+	outline: none;
+	margin: .25em 0;/*2014.06.30 + .label 换行时与下一个 .label 太紧了*/
+}
+
+
+/*按钮*/
+.button{
+	display: inline-block; *display: inline; *zoom: 1;
+	padding: .25em 1em;
+	vertical-align: middle;
+	text-align: center;
+	white-space: nowrap;/*2014.05.30 + 不换行*/
+	cursor: pointer;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0px 1px 5px -2px #ccc;
+	color: #333;
+	background: #F9F9F9;
+}
+
+
+/*整行按钮*/
+button.block{
+	width: 100%;
+}
+
+
+/*按钮和文本框焦点效果*/
+.button:focus,/*2014.06.20 +*/
+.input:focus{
+	outline: 0;
+	border-color: #bbb;
+	box-shadow: 0 0 5px 0px #DDD;
+}
+.button:hover{box-shadow: 0px 1px 6px -2px #aaa;}/*:hover 要在 :focus 后，不然没效果*/
+.button:active{box-shadow:0px 1px 5px #aaa inset}/*:active 要在 :hover 后*/
+
+
+/*大小*/
+.button.small{padding: .05em .5em}
+.button.large{font-size: 1.25em}
+
+.input.small{height: 25px;}
+.input.large{font-size: 1.25em}
+
+
+/*表单标签*/
+.label{
+	display: inline-block; *display: inline; *zoom: 1;
+	padding: .25em 0;
+}
+.label-none .label{display: none}
+
+
+/*表单组*/
+.form-group{
+	margin-bottom: .75em;
+}
+.form-group{*zoom:1}.form-group:after{content: ""; display: table; clear: both;}
+
+
+/*水平表单*/
+/*
+form.horizontal{
+	.form-group{
+		.label{}	.input{}	[.tip{}]
+	}
+	.form-group{
+		:radio{}
+		:radio{}
+	}
+	.form-group{
+		.controls{
+			:checkbox{}
+			:checkbox{}
+		}
+	}
+	.form-group{
+		.controls{
+			.float-right{放于.controls里，右浮右与文本框右边对齐}
+			:checkbox{}
+		}
+	}
+	.form-group{
+		.button{}
+	}
+	.button
+	...
+}
+*/
+form.horizontal{
+	padding-left: 9em;/*留位置给 .label, .label 以 absolute 放于左边*/
+}
+
+form.horizontal .form-group{
+	position: relative;
+}
+
+form.horizontal .label{
+	position: absolute;
+	right: 100%;
+	width: 9em;
+	margin-right: 1em;
+	text-align: right;
+	line-height: 1;/*换行时紧凑点*/
+	padding-top: .5em;
+}
+
+form.horizontal .input,
+form.horizontal .input-line,
+form.horizontal .controls{
+	float: left;
+	width: 16em;
+	max-width: 100%;/*窗口窄时不伸出右边*/
+	margin-right: .75em;
+}
+
+
+
+/*行内表单*/
+form.inline,
+form.inline .form-group,
+form.inline .label,
+form.inline .input,
+form.inline .input-line{
+	display: inline-block; *display:inline;*zoom:1;
+	vertical-align: middle;
+}
+form.inline .form-group{margin-right: .5em; margin-bottom: .25em}
+form.inline .input,
+form.inline .input-line{
+	width: 8em;
+}
+
+
+
+/*表单提示*/ /*2014.09.04 = 考虑去掉*/
+.tip{
+	float: left;
+	position: relative;
+	line-height: 1;
+	padding: .25em;
+	margin-top: .25em;
+	border: solid 1px #bbb;
+	border-radius: 2px;
+}
+.tip:before,
+.tip:after{
+	content: "";
+	position: absolute;
+	right: 100%;
+	top: .25em;
+	border: solid .375em;
+	border-width: 0 .375em .375em 0;
+	border-bottom-color: transparent;
+}
+.tip:after{
+	border-right-color: #fff;
+	margin-right: -2px;
+	margin-top: 1px;
+}
+
+
+/*控件组*/
+/*
+.group[.horizontal]{
+	.group-item{}
+	label.group-item{
+		:checkbox|:radio
+		text
+	}
+	.input.group-item{}
+	.button.group-item{}
+}
+*/
+.group{
+	/*display: inline-block; *display:inline;*zoom:1;*/
+	vertical-align: middle;
+
+	border-radius: 4px;
+	/*box-shadow: 0px 1px 1px #DCE3EB;*/
+
+	/*margin-bottom: 1em;*/
+}
+
+.group-item{
+	position: relative;
+	display: block;
+	/* padding: .5em 1em; */
+	border: solid 1px #bbb;
+	border-radius: 0;
+	margin-top: -1px;
+}
+label.group-item{cursor: pointer}
+button.group-item{width: 100%; box-shadow: none;}
+
+.group-item:hover{z-index: 1}
+.group-item:focus{z-index: 2}
+
+.group-item:first-child{border-radius: 4px 4px 0 0}
+.group-item:last-child{border-bottom-left-radius: 4px; border-bottom-right-radius: 4px}/*如果只有一个，既为第一也为最后，不要直接border-radius覆盖了*/
+
+
+/*水平控件组*/
+.group.horizontal{
+	display: inline-block;
+}
+.group.horizontal:after{content: ""; display: table; clear: both}
+
+.group.horizontal .group-item{
+	float: left;
+	width: auto;
+	margin-left: -1px;
+}
+
+.group.justified :last-child,.group.horizontal :last-child{border-radius: 0}
+.group.justified :first-child,.group.horizontal :first-child{border-radius: 4px 0 0 4px}
+.group.justified :last-child,.group.horizontal :last-child{border-top-right-radius: 4px; border-bottom-right-radius: 4px}
+
+
+
+/*控件组自动调整*/
+.group.justified{}
+.group.justified .group-item{
+	width: 1%;
+	white-space: nowrap;/*不能换行*/
+	vertical-align: baseline;/*top, middle 等都有点影响.input的高度？*/
+}
+.group.justified .group-item:not(:last-child){border-right-width: 0}
+.group.justified .group-item.input{/*文本框最长*/
+	width: 100%;
+	text-align: left;
+}
