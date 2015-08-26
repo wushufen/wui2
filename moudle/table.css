@@ -4,18 +4,20 @@
 table.table{}
 table.table.table-rainbow{}
 */
+table{border-collapse:collapse; border-spacing:0}
+th{text-align: left}
+
 .table{
 	/*避免ie7撑宽*/
 	/**table-layout: fixed;*/
-	border-collapse:collapse;
-	border-spacing:0;
 	width:100%;
 }
 .table th,
 .table td{
-	padding:.25em 2px .25em .75em;
+	padding:.25em .25em .25em .75em;
 	/* 用width无法控制宽度 */
-	max-width:10em;
+	/*2015.08.12 仅用 max-width 缩小时会溢出*/
+	/*max-width:10em;*/
 
 	/*2014.5.27 - 隐藏的内容看不到，如按钮*/
 	/*{
@@ -23,8 +25,9 @@ table.table.table-rainbow{}
 	text-overflow:ellipsis
 	}*/
 }
+.table th:last-child,
+.table td:last-child{padding-right: .75em}
 .table th{
-	text-align:left;
 	color: #111;
 	white-space: nowrap; /*2014.05.30 + 标题一般较短，不换行占位*/
 }
@@ -39,8 +42,8 @@ table.table.table-rainbow{}
 
 
 /*效果*/
-.table tr:not(:first-child):hover{/* outline: solid 1px #ddd; */outline-offset: -1px;}
-.table tr:hover td{/* background: #f7f7f7; */border-bottom: solid 1px #96CFE8;}
+.table tr:not(:first-child):hover{/* outline: solid 1px #ddd; *//* outline-offset: -1px; */}
+.table tr:hover td{/* background: #f7f7f7; *//* border-bottom: solid 1px #96CFE8; *//* text-shadow: 1px 1px 1px #02F0FA; */}
 
 /*彩虹条纹*/
 .table-rainbow tr:nth-child(7n+1){background: #fff}
@@ -51,3 +54,7 @@ table.table.table-rainbow{}
 .table-rainbow tr:nth-child(7n+6){background: #eef}
 .table-rainbow tr:nth-child(7n+7){background: #fef}
 
+/*响应*/
+.overflow-auto .table{
+	border: solid 1px #ddd;
+}

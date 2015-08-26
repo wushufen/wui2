@@ -8,23 +8,16 @@
 .block{display: block}
 .inline{display: inline}
 .inline-block{display: inline-block; *display: inline; *zoom: 1}
-
-/* 宽高 */
-/*2015.04.25 - 基本用不上*/
-/*
-.width-full{width:100%}
-.width-auto{width:auto}
-.height-full{height:100%}
-.height-auto{width:auto}
-*/
+.table{display: table}
+.table-row{display: table-row}
+.table-cell{display: table-cell}
 
 /*浮动*/
 .float-none{float: none}
 .float-left{float: left}
 .float-right{float: right !important}
-
 .clear{clear: both}
-.clearfix{*zoom:1}.clearfix:after{content: ""; display: table; clear: both;}
+.clearfix{*zoom:1}.clearfix:after{content: ""; display: table; clear: both}
 
 /*文本*/
 .text-center{text-align: center}
@@ -34,10 +27,6 @@
 .bold{font-weight: bold}
 .del{text-decoration: line-through; color: #aaa}
 
-.nowrap{white-space:nowrap}/*不换行*/
-.text-ellipsis /*超长自动在后加省略号*/
-{display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-
 /*对齐*/
 .v-align:after{content: ""; display: inline-block; height: 100%; vertical-align: middle}
 	.v-top,.v-middle,.v-bottom{display: inline-block}
@@ -45,7 +34,7 @@
 	.v-middle{vertical-align: middle}
 	.v-bottom{vertical-align: bottom}
 
-html.page-middle{display: table; width: 100%; height: 100%;table-layout: fixed;}
+html.page-middle{display: table; width: 100%; height: 100%; table-layout: fixed}
 	.page-middle>body{display: table-cell; vertical-align: middle; /* padding-top: 5%; */ /* padding-bottom: 10% */}
 
 /*居中*/
@@ -54,7 +43,7 @@ html.page-middle{display: table; width: 100%; height: 100%;table-layout: fixed;}
 
 /*固定*/
 .fixed-top,
-.fixed-bottom{position: fixed; left: 0; right: 0; z-index: 100}
+.fixed-bottom{position: fixed; /*left: 0; right: 0; z-index: 100*/}
 .fixed-top{top: 0}
 .fixed-bottom{bottom: 0}
 
@@ -67,22 +56,27 @@ html.page-middle{display: table; width: 100%; height: 100%;table-layout: fixed;}
 	        user-select: none;
 }
 
-/*滚动*/
+/*溢出处理*/
 .overflow-auto{overflow: auto}
+.break-word{/*word-break: break-word;*/ word-wrap: break-word}/*最后一个单词太长，放到第二行后还是放不下，则打断*/
+.break-all{word-break: break-all; word-wrap: break-word}/*最后一个单词不放到第二行，直接打断*/
+.nowrap{white-space:nowrap}/*不换行*/
+.text-ellipsis /*超长自动在后加省略号*/
+{display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 
-/************************************************\
+/*
 	justified
 	使组件表现为表格实现一行两端对齐
 	低版本浏览器不支持
-\************************************************/
+*/
 .justified{
 	display: table !important;
 	/*table-layout:fixed;*/
 	width: 100%;
 	box-sizing: border-box;
 }
-.justified:after{display: none !important}/*:after也会当成一格*/
+.justified:before,.justified:after{display: none !important}/*:after也会当成一格*/
 .justified > *{
 	display:inline-block;display:table-cell !important;
 	*display:inline;*zoom:1;

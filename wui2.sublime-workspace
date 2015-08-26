@@ -1,0 +1,521 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dTF",
+				"dateThisMonthFist"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "moudle/color.css",
+			"settings":
+			{
+				"buffer_size": 779,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "moudle/all.css",
+			"settings":
+			{
+				"buffer_size": 31408,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "plugin/wu.backrefresh.js",
+			"settings":
+			{
+				"buffer_size": 674,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "plugin/wu.countdown.js",
+			"settings":
+			{
+				"buffer_size": 1219,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "plugin/wu.dialog/index.html",
+			"settings":
+			{
+				"buffer_size": 73,
+				"line_ending": "Windows",
+				"name": "wui"
+			}
+		},
+		{
+			"file": "moudle/-webkit-scrollbar2.css",
+			"settings":
+			{
+				"buffer_size": 428,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/yunpan/myProjects/wui2/plugin/wu.dialog.js",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/css/weisite_order_add_purchase_pop.css",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/note.txt",
+		"/C/yunpan/myProjects/datePicker/datepicker.css",
+		"/C/yunpan/myProjects/datePicker/index.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/css/weisite_order.css",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/微站_订单.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/css/order_list.css",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/订单操作.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/js/app.js",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/微站弹窗.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/角色修改弹窗.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/项目经理设计师弹窗.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/订单列表.html",
+		"/C/yunpan/software/Sublime Text 2.0.2/Data/Packages/Default/Preferences.sublime-settings",
+		"/C/yunpan/software/Sublime Text 2.0.2/Data/Packages/User/Preferences.sublime-settings",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/css/app.css",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/角色.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/微站_角色.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/css/role.css",
+		"/C/yunpan/myProjects/cssSprite/js/main.js",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/主页.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/test.html",
+		"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/view/pageFrameTpl.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"data",
+			"data[",
+			"data",
+			"添加购买弹窗.html?动态地址",
+			".html",
+			"weisite_pop.css",
+			"weisite_order_add_purchase_pop",
+			"25",
+			"1/25",
+			"location",
+			"href",
+			"<a href=\"http://baidu.com\"><i class=\"glyphicon glyphicon-home\"></i>主页</a>",
+			"购买内容",
+			"<a class=\"slt-t-4-2\" href=\"\">下一节点</a>",
+			"<td class=\"slt-t-gmnr\">",
+			"项目进程&订单节",
+			"<li><span>",
+			"ul",
+			"\"><",
+			" class=\"nextMonthDay\"",
+			"class=\"lastMonthDay",
+			"class",
+			"s",
+			"retrun",
+			"dateTmp",
+			"dateNow",
+			"getFullYear",
+			"dateNow",
+			"classx += '",
+			"classx = '",
+			"selected",
+			"dateSelected",
+			"dateTmp",
+			"else ",
+			"f80",
+			"0af",
+			"selected",
+			"today",
+			"dateShowFirst",
+			"dayThisMonthFist",
+			"dateThisMonthFistDay",
+			"dateThisMonthFist",
+			"dateSelected",
+			"v",
+			"date",
+			"dateSelected",
+			" Date",
+			" date",
+			" Date",
+			" date",
+			"Date",
+			"date",
+			"Date",
+			"date",
+			"Date",
+			"date",
+			"Date",
+			"date",
+			"Date",
+			"date",
+			"dateNow",
+			"date",
+			"dateNow",
+			"setDate",
+			"vale",
+			"xclass",
+			"days",
+			"dateTplNew",
+			"datesStr",
+			"append",
+			"datesStr",
+			"setMonth",
+			"data",
+			"date",
+			"$date",
+			"li",
+			"dateTplTmp",
+			"nextMonthDay",
+			"lastMonthDay",
+			"dayTpl",
+			"dayTplTmp",
+			"day",
+			"$day",
+			"day",
+			"dayTpl",
+			"dayTplTmp",
+			"day",
+			"dady",
+			"var",
+			"dateNow",
+			"today",
+			"lastMonthDayTpl",
+			"lastMonthDayTplTmp",
+			"lastMonthDayTpl",
+			"class",
+			"lastMonthDayTplTmp",
+			"true",
+			"dateTmp",
+			"dateNow",
+			"nextMonthDay",
+			"lastMonthDayTpl",
+			"lastMonthDayTplTmp",
+			"lastMonthDayTpl",
+			"lastMonthDayTplTmp",
+			"lastMonthDayTpl",
+			"day",
+			"lastMonthDayTpl",
+			"lastMonthDayTpl.replace",
+			"lastMonthDayTpl",
+			"lastMonthDay",
+			"day",
+			"dateNow",
+			"day",
+			"date",
+			"dayShowFirst",
+			"dateThisMonthFist",
+			"dayThisMonthFist",
+			"lastMonthDay",
+			"dayThisMonthFistDay",
+			"dateThisMonthFistDay",
+			"dayThisMonthFistDay",
+			"lastMonthDay",
+			"lastMonthDayTpl",
+			"date",
+			"day",
+			"html",
+			"(-);",
+			"lib"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "moudle/color.css",
+					"settings":
+					{
+						"buffer_size": 779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								435,
+								435
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "moudle/all.css",
+					"settings":
+					{
+						"buffer_size": 31408,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18649,
+								18649
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5269.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "plugin/wu.backrefresh.js",
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21,
+								21
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "plugin/wu.countdown.js",
+					"settings":
+					{
+						"buffer_size": 1219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1007,
+								1007
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 468.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "plugin/wu.dialog/index.html",
+					"settings":
+					{
+						"buffer_size": 73,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"auto_name": "wui",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "moudle/-webkit-scrollbar2.css",
+					"settings":
+					{
+						"buffer_size": 428,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								428,
+								428
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"微站_订单_添加购买弹窗",
+				"view/微站_订单_添加购买弹窗.html"
+			],
+			[
+				"role.css",
+				"view/css/role.css"
+			],
+			[
+				"weisi",
+				"view/css/weisite_order.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/jzez.sublime-project"
+			],
+			[
+				"j",
+				"/C/yunpan/myProjects/WB/jiaZhuanEzhan-qq779706390/jzez.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 201.0,
+	"status_bar_visible": true
+}

@@ -254,45 +254,70 @@
 
 	<h3>horizontal</h3>
 	<div class="example">
-
-		<form class="horizontal">
-
+		<form class="form-horizontal" method="POST" action="">
 			<div class="form-group">
-				<label class="label">用户名</label>
-				<input class="input" type="text" name="" />
-				<p class="tip error">请输入用户名</p>
+				<label class="label">订单编号</label>
+				2015080505334334382
 			</div>
-
 			<div class="form-group">
-				<label class="label">密码</label>
-				<input class="input" type="password" name="" />
-				<p class="tip success">请输入用户名密码密码密码密码密码</p>
+				<label class="label">下单时间</label>
+				2015-08-05 02:36:39
 			</div>
-
 			<div class="form-group">
-				<label class="label">重复密码密码密码密码密码</label>
-				<input class="input" type="password" name="" />
+				<label class="label">订单状态</label>
+				有效
+				确认
+				未生产
+				未发货
+				未收货
 			</div>
-
 			<div class="form-group">
-				<div class="controls group horizontal">
-					<label class="group-item"><input type="radio" name="sex" />男</label>
-					<label class="group-item"><input type="radio" name="sex" />女</label>
-				</div>
+				<label class="label">姓名</label>
+				<input class="input" type="text" name="consignee" value="ab">
 			</div>
-
 			<div class="form-group">
-				<div class="controls">
-					<a class="float-right" href="">忘记密码?</a>
-					<label>
-						<input type="checkbox" name="" />
-						记住我
-					</label>
-				</div>
+				<label class="label">手机</label>
+				<input class="input" type="text" name="mobile" value="13569874562">
 			</div>
-
 			<div class="form-group">
-				<button class="button primary">登录</button>
+				<label class="label">地址</label>
+				<select class="input" name="province">
+					<option>请选择</option>
+				</select>
+				<select class="input" name="city">
+					<option>请选择</option>
+				</select>
+				<select class="input" name="district">
+					<option>请选择</option>
+				</select>
+				<input class="input block" type="text" name="address" value="av">
+			</div>
+			<div class="form-group">
+				<label class="label">支付方式</label>
+				货到付款
+			</div>
+			<div class="form-group">
+				<label class="label">订单总额</label>
+				<span class="money">49</span>
+			</div>
+			<div class="form-group">
+				<label class="label">付款金额</label>
+				<span class="money">0.00</span>
+			</div>
+			<div class="form-group">
+				<label class="label">物流公司</label>
+				<select class="input" name="shipping_name" id="">
+					<option value="请选择">请选择</option>
+					<option selected="selected" value="圆通">圆通</option>
+					<option value="申通">申通</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label class="label">物流单号</label>
+				<input class="input" type="text" name="shipping_sn" value="D00014543303">
+			</div>
+			<div class="form-group">
+				<button class="button primary" type="submit">保存</button>
 			</div>
 		</form>
 	</div>

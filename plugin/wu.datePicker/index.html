@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="datepicker.css">
+</head>
+<body>
+
+<div class="date">
+	<ul class="years">
+		<li><span>2001</span></li>
+		<li><span>2002</span></li>
+		<li><span>2003</span></li>
+		<li><span>2004</span></li>
+		<li><span>2005</span></li>
+		<li><span>2006</span></li>
+		<li><span>2007</span></li>
+		<li><span>2008</span></li>
+		<li><span>2009</span></li>
+		<li><span>2010</span></li>
+		<li><span>2011</span></li>
+		<li><span>2012</span></li>
+		<li><span>2013</span></li>
+		<li><span>2014</span></li>
+		<li><span>2015</span></li>
+		<li><span>2016</span></li>
+		<li><span>2017</span></li>
+		<li><span>2018</span></li>
+		<li><span>2019</span></li>
+		<li><span>2020</span></li>
+	</ul>
+	<ul class="months">
+		<li><span>1</span></li>
+		<li><span>2</span></li>
+		<li><span>3</span></li>
+		<li><span>4</span></li>
+		<li><span>5</span></li>
+		<li><span>6</span></li>
+		<li><span>7</span></li>
+		<li><span>8</span></li>
+		<li><span>9</span></li>
+		<li><span>10</span></li>
+		<li><span>11</span></li>
+		<li><span>12</span></li>
+	</ul>
+	<ul class="days">
+		<li class="lastMonthDay"><span>26</span></li>
+		<li class="lastMonthDay"><span>27</span></li>
+		<li class="lastMonthDay"><span>28</span></li>
+		<li class="lastMonthDay"><span>29</span></li>
+		<li class="lastMonthDay"><span>30</span></li>
+		<li class="lastMonthDay"><span>31</span></li>
+		<li><span>1</span></li>
+		<li><span>2</span></li>
+		<li><span>3</span></li>
+		<li><span>4</span></li>
+		<li><span>5</span></li>
+		<li><span>6</span></li>
+		<li><span>7</span></li>
+		<li class="today"><span>8</span></li>
+		<li><span>9</span></li>
+		<li><span>10</span></li>
+		<li><span>11</span></li>
+		<li><span>12</span></li>
+		<li><span>13</span></li>
+		<li><span>14</span></li>
+		<li><span>15</span></li>
+		<li><span>16</span></li>
+		<li><span>17</span></li>
+		<li><span>18</span></li>
+		<li><span>19</span></li>
+		<li><span>20</span></li>
+		<li><span>21</span></li>
+		<li><span>22</span></li>
+		<li><span>23</span></li>
+		<li><span>24</span></li>
+		<li><span>25</span></li>
+		<li><span>26</span></li>
+		<li><span>27</span></li>
+		<li><span>28</span></li>
+		<li><span>29</span></li>
+		<li><span>30</span></li>
+		<li><span>31</span></li>
+		<li class="nextMonthDay"><span>1</span></li>
+		<li class="nextMonthDay"><span>2</span></li>
+		<li class="nextMonthDay"><span>3</span></li>
+		<li class="nextMonthDay"><span>4</span></li>
+		<li class="nextMonthDay"><span>5</span></li>
+	</ul>
+	<select class="hours">
+		<option>00</option>
+		<option>01</option>
+		<option>02</option>
+		<option>03</option>
+		<option>04</option>
+		<option>05</option>
+		<option>06</option>
+		<option>07</option>
+		<option>08</option>
+		<option>09</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+	</select>
+	<select class="minutes">
+		<option>00</option>
+		<option>01</option>
+		<option>02</option>
+		<option>03</option>
+		<option>04</option>
+		<option>05</option>
+		<option>06</option>
+		<option>07</option>
+		<option>08</option>
+		<option>09</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+	</select>
+	<select class="seconds">
+		<option>00</option>
+		<option>01</option>
+		<option>02</option>
+		<option>03</option>
+		<option>04</option>
+		<option>05</option>
+		<option>06</option>
+		<option>07</option>
+		<option>08</option>
+		<option>09</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+	</select>
+</div>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	var daysEl = $('.days')[0];
+	fillDays(new Date);
+
+	// 填充日历表
+	function fillDays (dateSelected) {
+		// dateSelected 选定的日期时间
+
+		// 现在日期日间
+		var dateNow = new Date();
+		// 这个月的第一天
+		var dateThisMonthFistDay = new Date(dateSelected);
+		dateThisMonthFistDay.setDate(1);
+		// 这个月的第一天是星期几
+		var dayOfWeekThisMonthFistDay = dateThisMonthFistDay.getDay();
+		// 月历表显示的第一天
+		var dateShowFirst = new Date(dateThisMonthFistDay);
+		dateShowFirst.setDate(dateShowFirst.getDate()-dayOfWeekThisMonthFistDay);
+		// 遍历月历表
+		var datesStr = '';
+		var dateTpl = '<li data-value="$value" class="$class"><span>$date</span></li>'
+		for (var i = 0; i < 42; i++) {
+			var dateTmp = new Date(dateShowFirst);
+			dateTmp.setDate(dateTmp.getDate()+i);
+			var date = dateTmp.getDate();
+			var dateTplNew = dateTpl;
+			dateTplNew = dateTplNew.replace('$value', dateTmp)
+				.replace('$date', date);
+			var classx = '';
+			if (dateSelected.getMonth()-1 == dateTmp.getMonth()) {
+				classx += ' lastMonthDay';			
+			}
+			if(dateSelected.getMonth()+1 == dateTmp.getMonth()){
+				classx += ' nextMonthDay';			
+			}
+			if(dateSelected - dateTmp == 0){
+				classx += ' selected';			
+			}
+			if(isSameDate(dateTmp, dateNow)){
+				classx += ' today';			
+			}
+			dateTplNew = dateTplNew.replace('$class', classx);
+			datesStr += dateTplNew;
+		};
+		daysEl.innerHTML = datesStr;
+	}
+
+	// 是否同一天
+	function isSameDate (date1, date2) {
+		if (date1.getFullYear()==date2.getFullYear()
+			&&date1.getMonth()==date2.getMonth()
+			&&date1.getDate()==date2.getDate()) {
+			return true;
+		}
+		return false;
+	}
+</script>
+</body>
+</html>

@@ -1,37 +1,97 @@
-<style type="text/css">
-@import url(reset.css);
-/*
-@import url(container.css);
-*/
-@import url(class.css);
-@import url(../common/lib/iconfont/iconfont.css);
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>下拉菜单</title>
+	<link rel="stylesheet" type="text/css" href="wui.css">
+	<link rel="stylesheet" type="text/css" href="../lib/magic/magic.css">
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="dropdown-menu.js"></script>
+	<style type="text/css">
+		body{padding: 20%}
+	</style>
+</head>
+<body>
 
-@import url(dropdown-menu.css);
-</style>
+<div class="container">
+		
 
-<style type="text/css">
-body{padding: 300px}
-</style>
+	<span class="dropdown">
+		<button class="button primary" data-wui-dropdown="{hoverShow:true,closeOther:true,bodyClickClose:false}" type="button">下拉菜单</button>
+		<ul class="dropdown-menu magictime foolishIn">
+			<li>
+				<a href="">
+					<i class="iconfont icon-home"></i>
+					<span class="float-right">ctrl+L</span>
+					下拉菜单下拉菜单
+				</a>
+			</li>
+			<li>
+				<a href="">下拉菜单</a>
+			</li>
+			<li class="devider"></li>
+			<li>
+				<a href=""><i class="iconfont icon-like"></i>下拉菜单</a>
+			</li>
+			<li>
+				<a href="">下拉菜单</a>
+			</li>
+		</ul>
+	</span>
 
+	<span class="dropdown">
+		<button class="button" data-wui-dropdown="{hoverShow:true,closeOther:true,bodyClickClose:true}" type="button">下拉菜单</button>
+		<ul class="dropdown-menu dropdown-menu-right">
+			<li>
+				<a href="">
+					<i class="iconfont icon-home"></i>
+					<span class="float-right">ctrl+L</span>
+					下拉菜单下拉菜单
+				</a>
+			</li>
+			<li>
+				<a href="">下拉菜单</a>
+			</li>
+			<li class="devider"></li>
+			<li>
+				<a href=""><i class="iconfont icon-like"></i>下拉菜单</a>
+			</li>
+			<li>
+				<a href="">下拉菜单</a>
+			</li>
+		</ul>
+	</span>
 
-<span class="dropdown open">
-	<ul class="dropdown-menu dropdown-menu-right">
-		<li>
-			<a href="">
-				<i class="iconfont icon-home"></i>
-				<span class="float-right">ctrl+L</span>
-				下拉菜单下拉菜单
-			</a>
-		</li>
-		<li>
-			<a href="">下拉菜单</a>
-		</li>
-		<li class="devider"></li>
-		<li>
-			<a href=""><i class="iconfont icon-like"></i>下拉菜单</a>
-		</li>
-		<li>
-			<a href="">下拉菜单</a>
-		</li>
-	</ul>
-</span>
+	<span class="dropdown">
+		<button class="button" data-wui-dropdown="{hoverShow:true}" type="button">下拉菜单</button>
+		<ul class="dropdown-menu dropdown-menu-right">
+			<li>
+				<a href="">
+					<i class="iconfont icon-home"></i>
+					<span class="float-right">ctrl+L</span>
+					下拉菜单下拉菜单
+				</a>
+			</li>
+			<li>
+				<a href="">下拉菜单</a>
+			</li>
+			<li class="devider"></li>
+			<li>
+				<a href=""><i class="iconfont icon-like"></i>下拉菜单</a>
+			</li>
+			<li>
+				<a href="">下拉菜单</a>
+			</li>
+		</ul>
+	</span>
+
+</div>
+
+</body>
+</html>

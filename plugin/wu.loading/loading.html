@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="wu.loading.css">
+</head>
+<body>
+
+<div class="container" style="height:10000px">
+</div>
+
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript" src="./wu.loading.js"></script>
+<script type="text/javascript">
+
+var loading = wu.loading({
+	lock: true,
+	text: '请稍候...'
+	// html: $el,
+});
+
+
+setTimeout(function(){
+	loading.remove();
+	// wu.loading.remove();
+}, 3000);
+
+</script>
+</body>
+</html>

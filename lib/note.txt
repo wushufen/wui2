@@ -1,11 +1,20 @@
 anicollection
 	css3动画库
 
+backbone.js
+	mvc，模块化，数据与视图分离
+
+bootstrap
+	ui库
+
+font-awesome
+	字体图标
+
 fancybox
 	弹框
 
 iconfont
-	字体图樯
+	字体图标
 
 ie7
 	ie兼容， 貌似没用。。。
@@ -13,11 +22,14 @@ ie7
 magic
 	css3动画库
 
+My97DatePickerBeta
+	日期选择，貌似因为 base 标签而有问题
+
 pintuer
 	ui库
 
 spectrum
-	颜色
+	调色板
 
 swipe
 	幻灯

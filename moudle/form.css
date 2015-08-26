@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/*
+2015.07.24
+form.inline -> .form-inline
+form.horizontal -> .form-horizontal
+*/
+
 /************************************************\
 	表单
 \************************************************/
@@ -27,7 +33,7 @@ textarea.input{
 	/*使 textarea 不能拉宽*/
 	max-width: 100%; min-width: 100%;
 	
- height: auto;
+	height: auto;
 }
 /*横线文本框*/
 /*2014.09.04 = 考虑去掉*/
@@ -73,7 +79,7 @@ button.block{
 	box-shadow: 0 0 5px 0px #DDD;
 }
 .button:hover{box-shadow: 0px 1px 6px -2px #aaa;}/*:hover 要在 :focus 后，不然没效果*/
-.button:active{box-shadow:0px 1px 5px #aaa inset}/*:active 要在 :hover 后*/
+.button:active{box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25) inset;}/*:active 要在 :hover 后*/
 
 
 /*大小*/
@@ -89,19 +95,18 @@ button.block{
 	display: inline-block; *display: inline; *zoom: 1;
 	padding: .25em 0;
 }
-.label-none .label{display: none}
 
 
 /*表单组*/
 .form-group{
-	margin-bottom: .75em;
+	margin-bottom: 1em;
 }
 .form-group{*zoom:1}.form-group:after{content: ""; display: table; clear: both;}
 
 
 /*水平表单*/
 /*
-form.horizontal{
+.form-horizontal{
 	.form-group{
 		.label{}	.input{}	[.tip{}]
 	}
@@ -128,55 +133,69 @@ form.horizontal{
 	...
 }
 */
-form.horizontal{
-	padding-left: 9em;/*留位置给 .label, .label 以 absolute 放于左边*/
+.form-horizontal{
+	padding-left: 10em;/*留位置给 .label, .label 以 absolute 放于左边*/
 }
 
-form.horizontal .form-group{
+.form-horizontal .form-group{
 	position: relative;
+	line-height: 2;
+	margin-bottom: .5em;
 }
 
-form.horizontal .label{
+.form-horizontal .label{
 	position: absolute;
 	right: 100%;
 	width: 9em;
 	margin-right: 1em;
 	text-align: right;
-	line-height: 1;/*换行时紧凑点*/
-	padding-top: .5em;
+	line-height: 1.5;/*换行时紧凑点*/
+	padding-top: .25em;
 }
 
-form.horizontal .input,
-form.horizontal .input-line,
-form.horizontal .controls{
-	float: left;
+.form-horizontal .input,
+.form-horizontal .input-line,
+.form-horizontal .controls{
+	/*2015.08.13 -*/
+	/*float: left;*/
 	width: 16em;
 	max-width: 100%;/*窗口窄时不伸出右边*/
 	margin-right: .75em;
+	
+margin-bottom: .5em;
+}
+	/*2015.08.13 +*/
+.form-horizontal select.input{
+	width: auto
 }
 
 
 
 /*行内表单*/
-form.inline,
-form.inline .form-group,
-form.inline .label,
-form.inline .input,
-form.inline .input-line{
+.form-inline,
+.form-inline .form-group,
+.form-inline .label,
+.form-inline .input,
+.form-inline .input-line{
 	display: inline-block; *display:inline;*zoom:1;
 	vertical-align: middle;
 }
-form.inline .form-group{margin-right: .5em; margin-bottom: .25em}
-form.inline .input,
-form.inline .input-line{
+.form-inline .form-group{margin-right: .5em; margin-bottom: .35em}
+.form-inline .input,
+.form-inline .input-line{
 	width: 8em;
 }
+
+
+/*隐藏表单标签*/
+.label-none .label{display: none}
 
 
 
 /*表单提示*/ /*2014.09.04 = 考虑去掉*/
 .tip{
-	float: left;
+	/* float: left; */
+	display: inline-block; *display:inline;*zoom:1;
 	position: relative;
 	line-height: 1;
 	padding: .25em;

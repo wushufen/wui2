@@ -1,5 +1,4 @@
-@charset "UTF-8";
-
+@charset "utf-8";
 /*
 .container{
 	.row{
@@ -15,6 +14,7 @@
 	/*2015.04.24 bug 不支持 border-box 的，左右 padding 会溢出*/
 	max-width: 100%;
 	/*居中*/
+	/*ie6 中要加上 <doctype html> 声明即可居中*/
 	margin: auto;
 }
 
@@ -58,14 +58,20 @@
 .pd-0{padding-left: 0; padding-right: 0}
 
 
-.mg-a{margin: 1em}
-.mg-h{margin-left: 1em; margin-right: 1em}
-.mg-v{margin-top: 1em; margin-bottom: 1em}
+.mg-tblr,.mg-a{margin: 1em}
+.mg-tb,.mg-v{margin-top: 1em; margin-bottom: 1em}
+.mg-lr,.mg-h{margin-left: 1em; margin-right: 1em}
 .mg-t{margin-top: 1em}
 .mg-b{margin-bottom: 1em}
-.pd-a{padding: 1em}
-.pd-h{padding-left: 1em; padding-right: 1em}
-.pd-v{padding-top: 1em; padding-bottom: 1em}
+.mg-l{margin-left: 1em}
+.mg-r{margin-right: 1em}
+.pd-tblr,.pd-a{padding: 1em}
+.pd-tb,.pd-v{padding-top: 1em; padding-bottom: 1em}
+.pd-lr,.pd-h{padding-left: 1em; padding-right: 1em}
+.pd-t{padding-top: 1em}
+.pd-b{padding-bottom: 1em}
+.pd-l{padding-left: 1em}
+.pd-r{padding-right: 1em}
 
 
 /************************************************\
@@ -74,13 +80,13 @@
 \************************************************/
 /*大桌面 [1200, ]*/
 @media all{
-/* 
+
 *,*:before,*:after{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
- */
+
 .container{width: 1140px}
 
 }
@@ -171,5 +177,5 @@
 .container{
 	-webkit-transition: .5s;
 	   -moz-transition: .5s;
-			transition: .5s;
+	        transition: .5s;
 }

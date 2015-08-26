@@ -9,7 +9,7 @@
 	background: #eee;
 	white-space: nowrap;
 	overflow: hidden;
-	border-radius: 8px;
+	/* border-radius: 8px; */
 }
 .progress *{
 	background: #59C6FF;

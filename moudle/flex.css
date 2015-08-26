@@ -4,9 +4,11 @@
 /*未完成*/
 
 
-.flex{display: flex; overflow: auto}
+.flex,
+.flex-v{display: flex; overflow: auto}
 .flex-v{flex-direction: column}
-.flex>*{flex: none; overflow: auto}
+.flex>*,
+.flex-v>*{flex: none; overflow: auto}
 
 .flex-none{flex: none}
 .flex-1{flex: 1}

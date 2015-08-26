@@ -16,30 +16,36 @@ body{
     width: 250px;
     height: 100%;
     overflow: auto;
+    transition: .5s;
 }
 .sidebar-header{padding: 16px 1em;  color: #fff; border-bottom: solid 1px #bbb;}
 ul.sidebar-menu,
 .sidebar-menu ul{list-style: none;margin: 0;padding: 0;}
 .sidebar-menu ul{
-    margin: .5em -1em 0 0;
+    /* margin: .5em -1em 0 0; */
+    /* border-top: solid 1px #666; */
+    /* margin-top: -1px; */
 }
-.sidebar-menu li li{border:none}
+.sidebar-menu li li{/* border:none */}
 .sidebar-menu li{
-	border: solid #666;
-	border-width: 0px 0px 1px;
-	margin-bottom: -1px;
-	padding: .5em 1em;
+	/* border: solid #666; */
+	/* border-width: 0px 0px 1px; */
+	/* margin-bottom: -1px; */
+	padding-left: 1em;
+	line-height: 2.5em;
+	/* height: 2.5em; */
 	color: #ddd;
 }
 .sidebar-menu li.divider{padding: .25em .5em;background: #ddd;color: #000000;}
 .sidebar-menu li a{
 	display: block;
-	margin: -.5em -1em;
-	padding: .5em 1em;
+	margin-left: -1em;
+	padding-left: 1em;
 	color: #fff;
+	border-radius: 5px 0 0 5px;
 }
 .sidebar-menu li a:hover{background:#666}
-.sidebar-menu li a.active{background:#fff; color: #333; border-left: solid 2px #0af}
+.sidebar-menu li a.active{background:#fff; color: #333; /* border-left: solid 2px #0af; */}
 
 /* 弹性 */
 .sidebar{display: flex; flex-direction: column; height: 100%}

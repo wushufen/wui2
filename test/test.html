@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<body>
+
+<div class="container">
+	<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1217907015&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1217907015:52" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+</div>
+
+
+<!-- 2015.08.25 客服系统test -->
+<a id="udesk-im-57" target="_blank" href="javascript:void(0);">
+	<img src="http://udeskpub.qiniudn.com/im@2x-1437535730.png" style="vertical-align:bottom" width="30" >
+	<!-- <div style="margin: 5px;height: 20px; width: 5px;border-left: 1px solid #fff;float: left;"></div> -->
+	<span>在线客服</span>
+</a>
+<style type="text/css">
+	#udesk-im-57{
+		font-size: 14px;
+		z-index:9999;
+		text-decoration:none;
+		display:block;
+		color: #fff;
+		background:#FF8EC0;
+		background:rgba(255, 84, 181, 0.5);
+		position: fixed;
+		bottom:10px;
+		right:10px;
+		line-height: 30px;
+		max-width: 300px;
+		border-radius:3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		padding: 0 5px;
+		width: 30px;
+		height: 30px;
+		transition: .3s;
+	}
+	#udesk-im-57:hover{width: 100px}
+</style>
+<script>
+	var imEle = document.getElementById("udesk-im-57");
+	imEle.onclick = function(){
+		window.open(
+			"http://artqiyi.udesk.cn/im/select?cur_url="+location.href+"&pre_url="+document.referrer,
+			"",
+			"width=601,height=500,top="+(screen.height/2-400)+",left="+(screen.width/2-300)+",resizable=yes"
+		);
+	};
+</script>
+
+
+<script type="text/javascript" src="../common/lib/jquery.js"></script>
+</body>
+</html>
