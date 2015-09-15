@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="renderer" content="webkit">
@@ -8,34 +9,61 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
-	<title>wu.dialog</title>
-	<style type="text/css">
-	.mg-t{margin-top: 10em}
-	</style>
+	<title>wui.dialog</title>
 	<link rel="stylesheet" type="text/css" href="../../moudle/wui.css">
-	<style type="text/css">
-	.dialog{background: #fff; }
-	.dialog-header{padding: .25em 1em}
-	.dialog-body{padding: .25em 1em}
-	</style>
+	</script>
 </head>
-<body>
 
-<div class="container">
-	<a class="button" data-wui-dialog="{
-		overlay: true,
-		title: 'dialog',
-		content: 'ok',
-	}" href="#dialog">dialog</a>
-	<div id="dialog" class="dialog mg-t">
-		<div class="dialog-header">dialog</div>
-		<div class="dialog-body">
-			haha
+<body>
+	<div class="navbar">
+		<div class="container">
+			<ul class="nav">
+				<li><a href="">wui.dialog</a></li>
+			</ul>
 		</div>
 	</div>
-</div>
-
-<script type="text/javascript" src="../../lib/jquery.js"></script>
-<script type="text/javascript" src="wui.dialog.js"></script>
+	<div class="container mg-t">
+		<pre id="e1" class="wui-hightlight theme-sublime mg-v" style="outline:none" contenteditable>
+var d = wui.dialog({
+    el: '.dialog',                              // 对话框元素
+})
+	</pre>
+		<a class="button" onclick="eval($('#e1').text())">run</a>
+	</div>
+	<style type="text/css">
+	.overlay {
+		position: fixed;
+		background: #111;
+		top: 0;
+		left: 0;
+		opacity: 0.25;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+	}
+	
+	.dialog {
+		background: #fff
+	}
+	
+	.dialog-header {}
+	
+	.dialog-body {}
+	
+	.dialog-footer {}
+	</style>
+	<div class="dialog" style="display:none">
+		<div class="dialog-header">dialog-header</div>
+		<div class="dialog-body">dialog-body</div>
+		<div class="dialog-footer">dialog-footer</div>
+	</div>
+	<script type="text/javascript" src="../../lib/jquery.js"></script>
+	<script type="text/javascript" src="wui.dialog.js"></script>
+	<link rel="stylesheet" href="../wui.hightlight/wui.hightlight.css">
+	<script src="../wui.hightlight/wui.hightlight.js"></script>
+	<script type="text/javascript">
+	wui.hightlight(e1, 'javascript');
+	</script>
 </body>
+
 </html>

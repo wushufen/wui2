@@ -1,0 +1,79 @@
+<ul>
+	<li each="list"> ${id} ${name} </li>
+</ul>
+
+
+<div if="age>18">${age}</div>
+
+
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script type="text/javascript">
+
+wui = this.wui||{}
+wui.rander = function(el, data){
+	var $el = $(el);
+
+
+	// each
+	var $each = $('[each]');
+	$each.each(function(i, el){
+		var $this = $(this);
+		var list = window[$this.attr('each')];
+		console.log(list)
+		for(var i in list){
+			var item = list[i];
+			var $tpl = $this.clone();
+			var html = $tpl.html();
+			var reg = /\$\{(\w+)\}/g;
+			var m;
+			while(m = reg.exec(html)){
+				html = html.replace(m[0], item[m[1]]);
+				reg.lastIndex = 0;
+			};
+			$tpl.html(html);
+			$this.before($tpl);
+		}
+		$this.remove();
+	});
+
+	// if
+	var $if = $('[if]');
+	$if.each(function(i, el){
+		var $this = $(this);
+		var isShow = eval($this.attr('if'));
+		if (!isShow) {
+			$this.remove();
+		};
+	});
+
+}
+// test
+list = [
+	{id:1, name:'tome'},
+	{id:1, name:'tome', show: true},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+	{id:2, name:'lily'},
+]
+age = 19;
+dateS = new Date;
+wui.rander();
+dateE = new Date;
+</script>

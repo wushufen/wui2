@@ -7,6 +7,9 @@ backbone.js
 bootstrap
 	ui库
 
+codemirror
+	代码高亮与编辑器
+	
 font-awesome
 	字体图标
 
@@ -51,3 +54,9 @@ nprogress
 
 respond
 	响应式兼容
+
+syntaxhighlighter
+	代码高亮--未成功
+
+zeroclipboard
+	复制插件

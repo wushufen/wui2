@@ -1,4 +1,4 @@
-.wu-loading-lock{
+.wui-loading-lock{
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -8,7 +8,7 @@
 	opacity: .5;
 	z-index: 999999;
 }
-.wu-loading-wp{
+.wui-loading-wp{
 	position: fixed;
 	top: 40%;
 	left: 1em;
@@ -17,7 +17,7 @@
 	text-align: center;
 	z-index: 9999999;
 }
-.wu-loading{
+.wui-loading{
     display: inline-block; *display:inline;*zoom:1;
     /* border: solid 1px #eee; */
     border-radius: 3px;

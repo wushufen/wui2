@@ -5,7 +5,6 @@ var path = require('path');
 var fileFromArr = [
 	'reset.css',
 
-	'container.css',
 	'dropdown-menu.css',
 	'fixed-bottom-nav.css',
 	'flex.css',
@@ -29,6 +28,7 @@ var fileFromArr = [
 	'responsive.css',
 	'sticky-footer.css',
 
+	'container.css',
 	'class.css',
 	'color.css',
 	

@@ -1,0 +1,61 @@
+.wui-hightlight{
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	padding: 0.75em 1em;
+	background: #FFFFFF;
+	color: #333;
+	line-height: 1.5;
+	font-size: 12px;
+	/* display: block; */
+	/* white-space: pre-wrap; */
+	word-break: break-all;
+}
+.indent{display: inline-block; width: 4.5ex;line-height: 1.5;height: 1.5em;vertical-align: text-top;white-space: nowrap;}
+/*js*/
+.wui-hightlight{background: #FFFFFF; color: #333;}
+.indent{border-left: solid 1px #E0E0E0;}
+.comment{color: #969896;}
+.string{color: #183691;}
+.reg{color: #FF6B00;}
+.type{color: #0086b3;}
+.keyword{color: #a71d5d;}
+.function{color: #0086b3;}
+.number{color: #BD00F0;}
+.operator{color: #a71d5d;}
+/*css*/
+.selecter{color: #AFF523;}
+.property{color: #09CCEF;}
+.color{color: #ae81ff;}
+/*html*/
+.tag{color: #FF0061;}
+.attr{color: #AFF523;}
+.value{color: rgb(236, 236, 110);}
+
+
+
+
+/************theme**************/
+/*sublime*/
+.theme-sublime.wui-hightlight{background: #272822; color: #fff; font-size: 12px;}
+.theme-sublime .indent{border-left: solid 1px #333;}
+.theme-sublime .comment{color: slategray}
+.theme-sublime .string{color: #AFF523;}
+.theme-sublime .reg{color: #fd971f;}
+.theme-sublime .type{color: #66d9ef;}
+.theme-sublime .keyword{color: #FF0061;line-height: 1;}
+.theme-sublime .function{color: #66d9ef;}
+.theme-sublime .number{color: #ae81ff;}
+.theme-sublime .operator{color: #FF0061;}
+
+/*github*/
+.theme-github.wui-hightlight{background: #FFFFFF; color: #333;}
+.theme-github .indent{border-left: solid 1px #E0E0E0;}
+.theme-github .comment{color: #969896;}
+.theme-github .string{color: #183691;}
+.theme-github .reg{color: #FF6B00;}
+.theme-github .type{color: #0086b3;}
+.theme-github .keyword{color: #a71d5d;}
+.theme-github .function{color: #0086b3;}
+.theme-github .number{color: #BD00F0;}
+.theme-github .operator{color: #a71d5d;}
+/*s*/
+.wui-hightlight{box-shadow: 0px 2px 10px #666;}

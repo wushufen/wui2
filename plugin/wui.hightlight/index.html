@@ -1,0 +1,245 @@
+<html>
+<head>
+    <title>代码高亮</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="wui.hightlight.css">
+    <style type="text/css">
+    /*body{margin: 0}*/
+    .container{width: 960px; max-width: 100%; margin: auto}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <pre id="showHtml" class="wui-hightlight theme-sublime" contenteditablex>
+<div>
+    <form class="horizontal" method="POST" action="">
+        <div class="form-group">
+            <label class="label">用户名</label>
+            <input class="input" type="text" name="" />
+            <p class="tip">请输入用户名</p>
+        </div>
+        <div class="form-group">
+            <label class="label">密码</label>
+            <input class="input" type="password" name="" />
+            <p class="tip">请输入密码</p>
+        </div>
+        <div class="form-group">
+            <div class="controls">
+                <a class="float-right" href="">忘记密码?</a>
+                <label>
+                    <input type="checkbox" name="" />
+                    记住我
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="button primary">登录</button>
+        </div>
+    </form>
+</div>
+    </pre>
+    <pre id="showCss" class="wui-hightlight theme-sublime" contenteditablex>
+.wui-hightlight{
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    padding: 0.75em 1em;
+    background: #FFFFFF;
+    color: #333;
+    line-height: 1.5;
+    font-size: 12px;
+    /* display: block; */   
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.indent{display: inline-block; width: 4.5ex;}
+/*base color*/
+.wui-hightlight{background: #FFFFFF; color: #333;}
+div{abc: 1px}
+div, .class{color:#333}
+div,
+.class{color:#333}
+.class .class{color:#333}
+div.class{color:#fff}
+    </pre>
+    <pre id="showUse" class="wui-hightlight theme-sublime" contenteditablex></pre>
+    <pre id="show" class="wui-hightlight theme-sublime" contenteditablex>
+123
+3.14
+    .53
+ .53
+5.
+-2
+s1
+s2.a
+3if
+if3
+if
+word = 123
+var op = 123.4 / 56 / 7 * 8 + 9 - 10
+true false
+/
+
+//
+
+//comment
+
+/reg/
+
+/reg\/reg"reg'reg/
+
+/**/
+
+/*comment*/
+
+/*
+comment
+*/
+
+'string'
+
+"string"; str="string"
+
+'s"trin"g'
+
+"s'trin'g"
+
+"s\"tr"
+
+""
+xxx
+"
+s
+tr
+"
+
+`
+s\n
+tr
+awt\tfa
+we'
+'fa
+w"eg
+aw"
+e\"g
+`
+
+qqabc
+defxqqijf
+awffawqq
+--------
+qqabc
+defxqqijf
+awffawqq
+
+
+    </pre>
+</div>
+
+<script id="source" type="text/javascript">
+/*2015.09.03*/
+/*
+wui.hightlight(element, 'javascript');
+container = wui.hightlight('source', 'javascript');
+*/
++function(){
+    var language = {            
+        c: {},
+        javascript: {
+            number: /\b\d*\.*\d+\b/,
+            type: /\b(var)\b/,
+            keyword: /\b(while|if|else|for|in|continue|return|new|this|true|false)\b/,
+            'function': /\w+(?=\()/,
+            operator: /\^|\$|\+|-|\*|\/|\\|=|!|>|<|&|%|~|\|/,
+            string: /"(\\.|[\w\W])*?"|'(\\.|[\w\W])*?'|`(\\.|[\w\W])*?`/,
+            reg: /\/(?!\*)(\\.|[^\/\r\n\\])+\/[gim]*(?=\s*[\r\n,.;\}\)])/,
+            comment: /\/\/.*(?=\n)|\/\*[\w\W]*?\*\//,
+        },
+        css: {
+            string: /"(\\.|[\w\W])*?"|'(\\.|[\w\W])*?'/,
+            keyword: /\b(@import|@charset|!important|px|em|rem)\b/i,
+            number: /\b\d*\.*\d+(px|ex|em|rem)*\b/,
+            color: /#[\w\d]+/,
+            comment: /\/\*[\w\W]*?\*\//,
+            selecter: /[\w- \.\d,\n]+?(?={)/,
+            property: /[\w-]+?(?=\s*:)/,
+        },
+        html: {
+            tag: /<\w+>?|<\/\w+(?=>)|>/,
+            attr: /\w+(?=\=)/,
+            value: /"(\\.|[\w\W])*?"|'(\\.|[\w\W])*?'/,
+        }
+    };
+    // 转义
+    var escape = function(s){
+        return s.replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+    };
+    // 判断缩进字符
+    var getIndentChars = function(s){
+        // 行首缩进字符最多的最可能是缩进符
+        var indentMap = ['\t', '  ', '   ', '    '];
+        var indent = '\t';
+        var match = [];
+        for(var i in indentMap){
+            var reg = RegExp('\n'+indentMap[i], 'g');
+            var m = s.match(reg);
+            if (m&&m.length>=match.length) {
+                match = m;
+                indent = match[0].replace('\n','');
+            };
+        }
+        return indent;
+    };
+    var hightlight = function(code, lang){
+        var regMap = language[lang];
+        var newCode = ''; //已处理部分
+        var oldCode = code.replace(/^\s+|\s+$/, ''); //未处理部分
+        while(oldCode){
+            var index = oldCode.length;
+            var matchStr = '';
+            var classN = '';
+            for(var i in regMap){
+                var match = regMap[i].exec(oldCode);
+                if (match) {
+                    if (match.index<index||match.index==index&&match[0].length>matchStr.length) {
+                        index = match.index;
+                        matchStr = match[0];
+                        classN = i;
+                    }
+                }
+            }
+            newCode += escape(oldCode.substr(0,index))
+                +'<span class="'+classN+'">'+escape(matchStr)+'</span>';
+            oldCode = oldCode.substr(index+matchStr.length);
+        }
+        // 缩进  todo (^|\n)\t+
+        newCode = newCode.replace(RegExp(getIndentChars(code), 'g'), '<span class="indent">$&</span>');
+        // \n
+        // newCode = newCode.replace(/\n/g, '<span style="">$&</span>');
+        return newCode;
+    };
+
+    wui.hightlight = function(source, lang){
+        var sourceEl;
+        if (source instanceof HTMLElement) {
+            sourceEl = source;
+            source = sourceEl.innerHTML;
+        };
+        var hightlightCode = hightlight(source, lang);
+        if (sourceEl) {
+            sourceEl.innerHTML = hightlightCode;
+        };
+        return hightlightCode;
+    };
+}(this.wui||(wui={}));
+</script>
+<script id="use" type="text/javascript">
+// use
+wui.hightlight(showHtml, 'html');
+wui.hightlight(showCss, 'css');
+wui.hightlight(show, 'javascript');
+showUse.innerHTML = wui.hightlight(source, 'javascript');
+</script>
+</body>
+</html>

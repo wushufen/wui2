@@ -13,7 +13,7 @@ wui.cookie().name            //get
 wui.cookie()['name']         //get
 wui.cookie('name')           //get
 */
-+function(window, wui){
++function(wui){
 
 	function cookie(name, value, options){
 		options = options||{};
@@ -58,5 +58,4 @@ wui.cookie('name')           //get
 	}
 
 	wui.cookie = cookie;
-	window.wui = wui;
-}(this, this.wui||{});
+}( this.wui||(wui={}) );
