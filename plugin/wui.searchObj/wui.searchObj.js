@@ -10,5 +10,4 @@
 	delete searchObj[''];
 
 	wu.searchObj=searchObj;
-	win.wu=wu;
-}(this, this.wu||{});
+}(this, this.wu||(wu={});
